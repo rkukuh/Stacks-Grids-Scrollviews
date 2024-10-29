@@ -10,14 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "square.stack.3d.down.right")
-                .font(.largeTitle)
-                .foregroundStyle(.tint)
-                .padding()
+            Text("First Label")
             
-            Text("Stacks, Grids, Scrollviews")
+            Spacer()
+                .frame(height: 50)
+            
+            Text("Second Label")
         }
-        .padding()
     }
 }
 
