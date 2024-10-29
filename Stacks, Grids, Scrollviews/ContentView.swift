@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 50) {
+        VStack {
             Text("SwiftUI")
+            
+            Divider()
+            
             Text("rocks")
         }
     }
