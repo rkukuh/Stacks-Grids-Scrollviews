@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "square.stack.3d.down.right")
-                .font(.largeTitle)
-                .foregroundStyle(.tint)
-                .padding()
-            
-            Text("Stacks, Grids, Scrollviews")
+        ZStack {
+            Rectangle()
+                .fill(.green)
+                .frame(width: 50, height: 50)
+                .zIndex(1)
+
+            Rectangle()
+                .fill(.red)
+                .frame(width: 100, height: 100)
         }
-        .padding()
     }
 }
 
