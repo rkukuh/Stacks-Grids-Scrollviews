@@ -9,15 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "square.stack.3d.down.right")
-                .font(.largeTitle)
-                .foregroundStyle(.tint)
-                .padding()
-            
-            Text("Stacks, Grids, Scrollviews")
+        VStack(spacing: 50) {
+            Text("SwiftUI")
+            Text("rocks")
         }
-        .padding()
     }
 }
 
