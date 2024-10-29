@@ -9,11 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("SwiftUI")
-            
-            Divider()
-            
             Text("rocks")
         }
     }
