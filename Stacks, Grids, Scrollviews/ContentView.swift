@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
     var body: some View {
-        VStack {
-            Image(systemName: "square.stack.3d.down.right")
-                .font(.largeTitle)
-                .foregroundStyle(.tint)
-                .padding()
-            
-            Text("Stacks, Grids, Scrollviews")
+        if horizontalSizeClass == .regular {
+            Text("Compact")
+        } else {
+            Text("Regular")
         }
-        .padding()
     }
 }
 
