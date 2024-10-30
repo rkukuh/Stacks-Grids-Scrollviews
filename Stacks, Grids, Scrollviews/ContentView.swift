@@ -8,25 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var redScore = 0
+    @State private var blueScore = 0
+    
     var body: some View {
         Grid {
             GridRow {
-                Text("Top Leading")
-                    .background(.red)
-
-                Text("Top Trailing")
-                    .background(.orange)
+                Text("Red")
+                
+                ForEach(0..<redScore, id: \.self) { _ in
+                    Rectangle()
+                        .fill(.red)
+                        .frame(width: 20, height: 20)
+                }
             }
-
+            
             GridRow {
-                Text("Bottom Leading")
-                    .background(.green)
-
-                Text("Bottom Trailing")
-                    .background(.blue)
+                Text("Blue")
+                
+                ForEach(0..<blueScore, id: \.self) { _ in
+                    Rectangle()
+                        .fill(.blue)
+                        .frame(width: 20, height: 20)
+                }
             }
         }
         .font(.title)
+        
+        Button("Add to Red") { redScore += 1 }
+        Button("Add to Blue") { blueScore += 1 }
     }
 }
 
