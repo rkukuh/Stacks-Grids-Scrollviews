@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    let data = (1...100).map { "Item \($0)" }
+    let items = 1...50
     
-    let columns = [
-        GridItem(.fixed(100)),
-        GridItem(.flexible()),
+    let rows = [
+        GridItem(.fixed(50)),
+        GridItem(.fixed(50))
     ]
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(data, id: \.self) { item in
-                    Text(item)
+        ScrollView(.horizontal) {
+            LazyHGrid(rows: rows, alignment: .center) {
+                ForEach(items, id: \.self) { item in
+                    Image(systemName: "\(item).circle.fill")
+                        .font(.largeTitle)
                 }
             }
-            .padding(.horizontal)
+            .frame(height: 150)
         }
-        .frame(maxHeight: 300)
     }
 }
 
