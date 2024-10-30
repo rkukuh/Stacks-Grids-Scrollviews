@@ -9,15 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "square.stack.3d.down.right")
-                .font(.largeTitle)
-                .foregroundStyle(.tint)
-                .padding()
-            
-            Text("Stacks, Grids, Scrollviews")
+        Grid {
+            GridRow {
+                Text("Top Leading")
+                    .background(.red)
+
+                Text("Top Trailing")
+                    .background(.orange)
+            }
+
+            GridRow {
+                Text("Bottom Leading")
+                    .background(.green)
+
+                Text("Bottom Trailing")
+                    .background(.blue)
+            }
         }
-        .padding()
+        .font(.title)
     }
 }
 
