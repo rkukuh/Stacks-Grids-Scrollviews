@@ -9,26 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Grid(horizontalSpacing: 20, verticalSpacing: 20) {
-            GridRow {
-                Image(systemName: "xmark")
-                Image(systemName: "xmark")
-                Image(systemName: "xmark")
-            }
-            
-            GridRow {
-                Image(systemName: "circle")
-                Image(systemName: "xmark")
-                Image(systemName: "circle")
-            }
-            
-            GridRow {
-                Image(systemName: "xmark")
-                Image(systemName: "circle")
-                Image(systemName: "circle")
+        Grid(horizontalSpacing: 0, verticalSpacing: 0) {
+            ForEach(0..<8) { row in
+                GridRow {
+                    ForEach(0..<8) { col in
+                        if (row + col).isMultiple(of: 2) {
+                            Rectangle()
+                                .fill(.black)
+                        } else {
+                            Rectangle()
+                                .fill(.white)
+                        }
+                    }
+                }
             }
         }
-        .font(.largeTitle)
+        .aspectRatio(1, contentMode: .fit)
+        .border(.black, width: 1)
+        .padding()
     }
 }
 
