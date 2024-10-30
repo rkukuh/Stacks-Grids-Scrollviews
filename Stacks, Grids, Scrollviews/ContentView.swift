@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    let colors: [Color] = [.red, .green, .blue]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "square.stack.3d.down.right")
-                .font(.largeTitle)
-                .foregroundStyle(.tint)
-                .padding()
+        ScrollViewReader { value in
+            Button("Jump to #10") {
+                value.scrollTo(10, anchor: .top)
+            }
+            .padding()
             
-            Text("Stacks, Grids, Scrollviews")
+            ScrollView {
+                ForEach(0..<100) { i in
+                    Text("Example \(i)")
+                        .font(.title)
+                        .frame(width: 200, height: 200)
+                        .background(colors[i % colors.count])
+                        .id(i)
+                }
+            }
         }
-        .padding()
+        .frame(height: 500)
     }
 }
 
