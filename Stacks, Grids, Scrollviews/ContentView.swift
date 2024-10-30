@@ -9,32 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Grid {
+        Grid(horizontalSpacing: 20, verticalSpacing: 20) {
             GridRow {
-                Text("Food")
-                Text("$200")
+                Image(systemName: "xmark")
+                Image(systemName: "xmark")
+                Image(systemName: "xmark")
             }
-
+            
             GridRow {
-                Text("Rent")
-                Text("$800")
+                Image(systemName: "circle")
+                Image(systemName: "xmark")
+                Image(systemName: "circle")
             }
-
+            
             GridRow {
-                Text("Candles")
-                Text("$3600")
+                Image(systemName: "xmark")
+                Image(systemName: "circle")
+                Image(systemName: "circle")
             }
-
-            Divider()
-
-            GridRow {
-                Text("$4600")
-                    .gridCellColumns(2)
-                    .multilineTextAlignment(.trailing)
-            }
-
         }
-        .font(.title)
+        .font(.largeTitle)
     }
 }
 
