@@ -9,15 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "square.stack.3d.down.right")
-                .font(.largeTitle)
-                .foregroundStyle(.tint)
-                .padding()
-            
-            Text("Stacks, Grids, Scrollviews")
+        ScrollView {
+            LazyVStack {
+                ForEach(1...100, id: \.self) { value in
+                    Text("Row \(value)")
+                }
+            }
         }
-        .padding()
+        .frame(height: 300)
     }
 }
 
