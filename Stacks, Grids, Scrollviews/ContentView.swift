@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
+        ScrollView(.horizontal) {
+            HStack(spacing: 20) {
                 ForEach(0..<10) {
                     Text("Item \($0)")
                         .foregroundStyle(.white)
