@@ -11,11 +11,8 @@ struct ContentView: View {
     let data = (1...100).map { "Item \($0)" }
     
     let columns = [
+        GridItem(.fixed(100)),
         GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
     ]
     
     var body: some View {
