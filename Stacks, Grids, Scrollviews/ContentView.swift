@@ -9,17 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack(spacing: 20) {
-                ForEach(0..<10) {
-                    Text("Item \($0)")
-                        .foregroundStyle(.white)
-                        .font(.largeTitle)
-                        .frame(width: 200, height: 200)
-                        .background(.red)
-                }
-            }
+        ScrollView([.horizontal, .vertical]) {
+            Image("gamemap")
         }
+        .ignoresSafeArea()
     }
 }
 
